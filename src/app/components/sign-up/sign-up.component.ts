@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/core/services/users.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,7 +12,7 @@ export class SignUpComponent {
 
   signUpForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UsersService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
 
@@ -23,7 +25,14 @@ export class SignUpComponent {
   }
 
   onSubmit(): void {
-    console.log(this.signUpForm.value);
+
+    if (!this.signUpForm.valid) {
+      return;
+    }
+
+    this.userService.registerUser(this.signUpForm.value);
+
+    this.snackBar.open('Usuario Registrado Correctamente', 'Cerrar', { duration: 3000 })
 
     this.signUpForm.reset();
   }
