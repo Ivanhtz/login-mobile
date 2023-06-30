@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/core/services/users.service';
 import { AuthsService } from 'src/app/core/services/auths.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   private subscription!: Subscription;
 
-  constructor(private fb: FormBuilder, private router: Router, private userService: UsersService, private authService: AuthsService) { }
+  constructor(private fb: FormBuilder, private router: Router, private userService: UsersService, private authService: AuthsService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
 
@@ -55,7 +56,7 @@ export class LoginComponent {
               break;
 
             case 404:
-              alert('Correo electrónico del usuario no encontrado o contraseña inválida');
+              this.snackBar.open('Correo electrónico del usuario no encontrado o contraseña inválida', 'Cerrar', { duration: 3000 })
               break;
 
             case 601:

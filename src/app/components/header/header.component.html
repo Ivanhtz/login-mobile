@@ -2,8 +2,9 @@
     <h1 class="header__title">Login-Angular</h1>
 
     <div class="header__buttons">
-        <button mat-raised-button color="accent" [routerLink]="textPath" (click)="changeName()"> {{textButton}}
+        <button *ngIf="!isAuthenticated" mat-raised-button color="accent" [routerLink]="textPath"
+            (click)="changeName()"> {{textButton}}
         </button>
-        <button mat-raised-button color="warn">Cerrar Sesión</button>
+        <button *ngIf="isAuthenticated" mat-raised-button color="warn" (click)="logout()">Cerrar Sesión</button>
     </div>
 </header>

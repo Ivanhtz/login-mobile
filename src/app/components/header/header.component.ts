@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { AuthsService } from 'src/app/core/services/auths.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,10 @@ export class HeaderComponent {
 
   textButton: string = 'Login';
   textPath: string = './login';
+  isAuthenticated!: Boolean;
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthsService) { }
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
@@ -26,6 +28,7 @@ export class HeaderComponent {
 
   updateTextButton() {
     const currentUrl = this.router.url;
+    this.isAuthenticated = this.authService.isAuthenticated();
 
     if (currentUrl === '/login') {
       this.textButton = 'Inicio';
@@ -41,5 +44,9 @@ export class HeaderComponent {
   }
 
 
+  logout() {
+    this.authService.removeToken();
+    this.router.navigate(['']);
+  }
 
 }
