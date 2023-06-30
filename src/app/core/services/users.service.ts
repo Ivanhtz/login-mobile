@@ -33,6 +33,10 @@ export class UsersService {
     );
   }
 
+  deleteUser(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrlUsers}/${id}`);
+  }
+
 
   private handleError<T>(operation = 'operation') {
     return (error: any): Observable<T> => {

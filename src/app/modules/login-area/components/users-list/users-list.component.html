@@ -3,6 +3,6 @@
     <h2 class="containerUsers__title">Lista de Usuarios</h2>
 
     <div class="flexContainer">
-        <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+        <app-user-card *ngFor="let user of users" [user]="user" (userDeleted)="onDeleteUser($event)"></app-user-card>
     </div>
 </div>

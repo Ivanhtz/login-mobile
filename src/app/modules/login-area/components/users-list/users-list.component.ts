@@ -21,6 +21,10 @@ export class UsersListComponent {
 
   }
 
+  onDeleteUser(userId: string): void {
+    this.users = this.users.filter(user => user.id !== userId);
+  }
+
 
   private getUsersArray(): void {
     this.userService.getUsers().subscribe((response: any) => {
