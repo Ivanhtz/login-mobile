@@ -19,12 +19,18 @@ export class UsersService {
 
 
   registerUser(user: Iuser): Observable<Iuser> {
-
     return this.http.post<Iuser>(`${this.apiUrlAuth}/sign-up`, user).pipe(catchError(this.handleError<Iuser>('register')));
   }
 
   login(userLogin: IuserLogin): Observable<Iresponse> {
     return this.http.post<Iresponse>(`${this.apiUrlAuth}/log-in`, userLogin).pipe(catchError(this.handleError<Iresponse>('login')));
+  }
+
+
+  getUsers(): Observable<Iuser[]> {
+    return this.http.get<Iuser[]>(this.apiUrlUsers).pipe(
+      catchError(this.handleError<Iuser[]>('getUsers'))
+    );
   }
 
 

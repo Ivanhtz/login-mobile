@@ -2,4 +2,19 @@
 
 .cardUser {
     width: 300px;
+    padding: 20px;
+    background-color: $signUpBackgroundColor;
+
+    p {
+        font-weight: bold;
+        text-align: center;
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    mat-card-actions {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
