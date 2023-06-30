@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="registerTitle">Login de Usuario</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+
+        <div class="loginForm__containerInput">
+            <label for="email" class="loginForm__label">Email</label>
+            <input type="email" id="email" class="loginForm__input" formControlName="email"
+                placeholder="introduce tu email">
+
+            <p class="error" *ngIf="checkControl('email','required')">El campo Email es obligatorio</p>
+
+            <p class="error" *ngIf="checkControl('email','email')">El campo correo no es valido</p>
+        </div>
+
+        <div class="loginForm__containerInput">
+            <label for="password" class="loginForm__label">Contraseña</label>
+            <input type="password" id="password" class="loginForm__input" formControlName="password"
+                placeholder="introduce tu contraseña">
+            <p class="error" *ngIf="checkControl('password','required')">El campo Contraseña es obligatorio</p>
+        </div>
+
+        <div class="loginForm__containerInput">
+            <button type="submit" [disabled]="!loginForm.valid" mat-raised-button>Iniciar Sesión</button>
+        </div>
+    </form>
+</div>

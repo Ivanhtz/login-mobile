@@ -1,0 +1,47 @@
+<div class="container">
+    <h2 class="registerTitle">Registro de Usuario</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="signUpForm">
+
+        <div class="signUpForm__containerInput">
+            <label for="name" class="signUpForm__label">Nombre</label>
+            <input type="text" id="name" class="signUpForm__input" formControlName="name"
+                placeholder="introduce tu nombre">
+
+            <p class="error" *ngIf="checkControl('name','required')">El campo nombre es obligatorio</p>
+
+            <p class="error" *ngIf="checkControl('name','minlength')">El campo tiene que tener minimo 3 caracteres</p>
+        </div>
+
+        <div class="signUpForm__containerInput">
+            <label for="surname" class="signUpForm__label">Apellido</label>
+            <input type="text" id="surname" class="signUpForm__input" formControlName="surname"
+                placeholder="introduce tu apellido">
+
+            <p class="error" *ngIf="checkControl('surname','required')">El campo Apellido es obligatorio</p>
+
+            <p class="error" *ngIf="checkControl('surname','minlength')">El campo tiene que tener minimo 3 caracteres
+            </p>
+        </div>
+
+        <div class="signUpForm__containerInput">
+            <label for="email" class="signUpForm__label">Email</label>
+            <input type="email" id="email" class="signUpForm__input" formControlName="email"
+                placeholder="introduce tu email">
+
+            <p class="error" *ngIf="checkControl('email','required')">El campo Email es obligatorio</p>
+
+            <p class="error" *ngIf="checkControl('email','email')">El campo correo no es valido</p>
+        </div>
+
+        <div class="signUpForm__containerInput">
+            <label for="password" class="signUpForm__label">Contraseña</label>
+            <input type="password" id="password" class="signUpForm__input" formControlName="password"
+                placeholder="introduce tu contraseña">
+            <p class="error" *ngIf="checkControl('password','required')">El campo Contraseña es obligatorio</p>
+        </div>
+
+        <div class="signUpForm__containerInput">
+            <button type="submit" [disabled]="!signUpForm.valid" mat-raised-button>Registro</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+@import "variables";
+
+.containerUsers {
+
+    &__title {
+        text-align: center;
+        padding: 30px 0;
+        color: $colorFont;
+    }
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

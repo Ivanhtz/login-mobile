@@ -1,0 +1,32 @@
+@import "variables";
+
+.header {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: $headerBackgroundColor;
+
+    @include mobileFirst(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    &__title {
+        color: $colorFont;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+
+        @include mobileFirst(md) {
+            flex-direction: row;
+        }
+    }
+}

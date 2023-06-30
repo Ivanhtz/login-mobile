@@ -1,0 +1,55 @@
+@import "variables";
+
+.loginForm {
+
+    background-color: $loginBackgroundColor;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    box-shadow: 5px 5px 5px black;
+
+    @include mobileFirst(md) {
+        align-items: flex-start;
+    }
+
+    &__containerInput {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    &__label {
+        font-weight: bold;
+    }
+}
+
+.container {
+    @include mobileFirst(md) {
+        width: 40%;
+    }
+}
+
+.registerTitle {
+    text-align: center;
+    margin: 30px 0;
+    color: $colorFont;
+}
+
+.error {
+    font-weight: bold;
+    color: $error;
+}
