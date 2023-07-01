@@ -1,27 +1,54 @@
-# LoginAngular
+# Login Angular
+---
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+La aplicación la realicé enfocada en la sencillez y funcionalidad, además de intentar personalizar lo máximo posible la maquetación, siendo totalmente adaptable a cualquier pantalla, las herramientas que utilicé fue Angular Material y SCSS, creando archivos personalizados tanto de reset como de variables de estilos.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Cuenta con dos vistas públicas, dos formularios, ambos con gestión de errores y validadores
+- En la parte superior tenemos la cabecera, presente en toda la app
+- Dispone de un único botón para desplazarnos de un formulario a otro en función a donde nos encontremos
+- En la misma cabecera y solo visible cuando tenemos un usuario logueado tenemos el botón de cerrar sesión, elimina el token y nos devuelve al formulario de login.
+- También en esta parte privada, disponemos de una sección de usuarios registrados, donde podemos tener una vista general de todos los usuarios y además una individualizada de cada uno.
+- Otra de las funcionalidades que tenemos en este apartado es la opción de eliminar usuarios, se colocó un pequeño modal como precaución para preguntarte si realmente estás seguro de borrarlo.
+- La ruta privada, está protegida por un guard, si no hay un token de autenticación te redirige a la pantalla de login
+- Finalmente, se creó un interceptor para el transporte del token en las peticiones.
 
-## Code scaffolding
+## Dependencias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Login-Angular depende de las siguientes librerías:
 
-## Build
+- Angular - versión 16.0.1
+- Angular CLI - versión 16.0.1
+- Angular Material - versión 16.1.3
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Asegúrate de tener estas dependencias instaladas antes de ejecutar la aplicación.
 
-## Running unit tests
+## Contribuciones
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+¡Las contribuciones son bienvenidas! Si deseas contribuir a Login-Angular, sigue estas pautas:
 
-## Running end-to-end tests
+1. Haz un fork del repositorio.
+2. Crea una nueva rama para tu funcionalidad o corrección de errores.
+3. Realiza tus cambios con mensajes descriptivos en los commits.
+4. Sube tus cambios a tu fork.
+5. Envía una pull request a la rama `main` del repositorio original.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Asegúrate de que tu código cumpla con el estilo de codificación existente e incluya la documentación adecuada y una cobertura de pruebas apropiada.
 
-## Further help
+## Licencia
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más información.
+
+## Agradecimientos
+
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+
+
+## Autor
+
+Si tienes alguna pregunta, sugerencia o problema, no dudes en contactarme a 
+- [Iván Pizarroso](https://github.com/Ivanhtz).
+
+---
