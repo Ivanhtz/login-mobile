@@ -22,6 +22,7 @@ export class UsersService {
     return this.http.post<Iuser>(`${this.apiUrlAuth}/sign-up`, user).pipe(catchError(this.handleError<Iuser>('register')));
   }
 
+
   login(userLogin: IuserLogin): Observable<Iresponse> {
     return this.http.post<Iresponse>(`${this.apiUrlAuth}/log-in`, userLogin).pipe(catchError(this.handleError<Iresponse>('login')));
   }

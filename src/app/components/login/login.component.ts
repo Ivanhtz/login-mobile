@@ -56,7 +56,7 @@ export class LoginComponent {
               break;
 
             case 404:
-              this.snackBar.open('Correo electrónico del usuario no encontrado o contraseña inválida', 'Cerrar', { duration: 3000 })
+              this.snackBar.open('Correo electrónico del usuario no encontrado o contraseña inválida', 'Cerrar', { duration: 5000 })
               break;
 
             case 601:

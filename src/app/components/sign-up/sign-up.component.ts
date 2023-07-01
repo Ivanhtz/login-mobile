@@ -30,9 +30,17 @@ export class SignUpComponent {
       return;
     }
 
-    this.userService.registerUser(this.signUpForm.value);
+    // this.userService.registerUser(this.signUpForm.value);
 
-    this.snackBar.open('Usuario Registrado Correctamente', 'Cerrar', { duration: 3000 })
+    this.userService.registerUser(this.signUpForm.value).subscribe(
+      response => {
+        this.snackBar.open('Usuario Registrado Correctamente', 'Cerrar', { duration: 5000 });
+        this.signUpForm.reset();
+      },
+      error => {
+        console.error('Error al registrar usuario:', error);
+      }
+    );
 
     this.signUpForm.reset();
   }
