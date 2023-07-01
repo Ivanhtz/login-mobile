@@ -7,6 +7,7 @@ import { UserCardComponent } from './components/users-list/user-card/user-card.c
 import { MaterialModule } from '../material/material.module';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
+import { AddIconPipe } from 'src/app/core/pipes/add-icon.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { UserViewComponent } from './components/user-view/user-view.component';
     UsersListComponent,
     UserCardComponent,
     DialogComponent,
-    UserViewComponent
+    UserViewComponent,
+    AddIconPipe
 
   ],
   imports: [

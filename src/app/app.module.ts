@@ -18,13 +18,15 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { loginGuard } from './core/guards/login.guard';
 import { LoginAreaModule } from './modules/login-area/login-area.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     C404Component,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
