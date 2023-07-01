@@ -34,6 +34,10 @@ export class UsersService {
     );
   }
 
+  getUserById(id: string): Observable<Iuser> {
+    return this.http.get<Iuser>(`${this.apiUrlUsers}/${id}`);
+  }
+
   deleteUser(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrlUsers}/${id}`);
   }

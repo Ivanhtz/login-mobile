@@ -1,0 +1,38 @@
+@import "variables";
+
+.cardUserView {
+    width: 290px;
+    padding: 20px;
+    background-color: $cardViewBackgroundColor;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    @include mobileFirst(md) {
+        width: 450px;
+    }
+
+    mat-card-title {
+        font-size: 1.8rem;
+
+        @include mobileFirst(md) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        font-weight: bold;
+        text-align: center;
+        font-size: 1rem;
+        margin: 10px 0;
+
+        @include mobileFirst(md) {
+            font-size: 1.3rem;
+        }
+    }
+
+    mat-card-actions {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

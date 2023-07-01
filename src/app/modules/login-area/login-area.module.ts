@@ -6,6 +6,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { UserCardComponent } from './components/users-list/user-card/user-card.component';
 import { MaterialModule } from '../material/material.module';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { UserViewComponent } from './components/user-view/user-view.component';
 
 
 
@@ -13,7 +14,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
   declarations: [
     UsersListComponent,
     UserCardComponent,
-    DialogComponent
+    DialogComponent,
+    UserViewComponent
 
   ],
   imports: [

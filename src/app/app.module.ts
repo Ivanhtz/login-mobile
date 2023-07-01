@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { C404Component } from './components/c404/c404.component';
 import { MaterialModule } from './modules/material/material.module';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -23,7 +22,6 @@ import { LoginAreaModule } from './modules/login-area/login-area.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     C404Component,
     SignUpComponent,
     LoginComponent

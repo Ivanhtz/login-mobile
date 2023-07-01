@@ -11,7 +11,7 @@
         </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button color="primary">Editar</button>
+        <button (click)="viewUser(user.id)" mat-raised-button color="primary">Ver más</button>
         <button (click)="deleteUser(user.id)" mat-raised-button color="warn">Borrar</button>
     </mat-card-actions>
 </mat-card>
